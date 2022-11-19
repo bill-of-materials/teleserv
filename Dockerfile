@@ -30,4 +30,7 @@ RUN set -x \
 
 USER teleserv
 
+ENV TELESERV_CONFIG=/app/config.yml
+ENV TELESERV_VDT_ROOT=/app/vdt
+
 CMD ["/app/teleserv.py"]

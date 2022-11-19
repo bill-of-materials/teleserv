@@ -4,6 +4,7 @@
 default: build
 build: docker_build output
 clean: docker_clean
+dev: docker_run_dev
 test: docker_scan
 release: docker_build test output docker_push
 run: dockercompose_up
@@ -69,6 +70,9 @@ docker_push:
 
 docker_scan:
 	docker scan $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+docker_run_dev:
+	DOCKER_IMAGE=$(DOCKER_IMAGE) DOCKER_TAG=$(DOCKER_TAG) docker-compose up
 
 output:
 	@echo $(DOCKER_IMAGE):$(DOCKER_TAG)
