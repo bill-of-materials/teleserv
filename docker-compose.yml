@@ -1,0 +1,6 @@
+services:
+  teleserv:
+    image: ${DOCKER_IMAGE:-uzer/teleserv}:${DOCKER_TAG:-latest}
+    # network_mode: "host"
+    ports:
+    - "3615:3615"
