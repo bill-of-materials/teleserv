@@ -4,7 +4,6 @@
 default: build
 build: docker_build output
 clean: docker_clean
-dev: docker_run_dev
 test: docker_scan
 release: docker_build test output docker_push
 run: dockercompose_up

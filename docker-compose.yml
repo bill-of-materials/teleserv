@@ -1,6 +1,15 @@
+version: "3.9"
+
 services:
   teleserv:
     image: ${DOCKER_IMAGE:-uzer/teleserv}:${DOCKER_TAG:-latest}
     # network_mode: "host"
     ports:
-    - "3615:3615"
+      - "3615:3615"
+
+  emulator:
+    image: uzer/miedit-emulator:latest
+    environment:
+      - MINITEL_SERVER="ws://teleserv:3615/ws"
+    ports:
+      - "80:8080"
