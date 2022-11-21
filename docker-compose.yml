@@ -7,9 +7,9 @@ services:
     ports:
       - "3615:3615"
 
-  emulator:
+  minitel:
     image: uzer/miedit-emulator:latest
     environment:
       - MINITEL_SERVER="ws://teleserv:3615/ws"
     ports:
-      - "80:8080"
+      - "3614:8080"
